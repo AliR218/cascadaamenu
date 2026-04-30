@@ -4,27 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cascada Bowling Cafe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Titan+One&family=Open+Sans:wght@600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --red: #d31124;
-            --yellow: #f9b233;
-            --beige: #f3e9d2;
+            --brand-blue: #4a86a8;
+            --brand-orange: #e87a31;
+            --dark-bg: #0b0f19;
         }
 
-        body {
-            background-color: var(--beige);
-            font-family: 'Open Sans', sans-serif;
+        body, html {
             margin: 0;
-            color: #333;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
             scroll-behavior: smooth;
+        }
+
+        /* --- STICKY HEADER --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px;
+            z-index: 1000;
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo {
+            height: 70px;
         }
 
         /* --- HERO SECTION --- */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1538510114873-1d33b0209da4?auto=format&fit=crop&q=80&w=1000'); /* Placeholder for bowling pic */
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1538510114873-1d33b0209da4?q=80&w=2000'); 
             background-size: cover;
             background-position: center;
             display: flex;
@@ -32,187 +50,192 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: white;
         }
 
         .hero h1 {
-            font-family: 'Luckiest Guy', cursive;
-            font-size: 5rem;
+            font-family: 'Audiowide', cursive;
+            font-size: 4rem;
             margin: 0;
-            color: var(--yellow);
-            text-shadow: 4px 4px var(--red);
+            letter-spacing: 4px;
+            color: var(--brand-blue);
+            -webkit-text-stroke: 1px white;
         }
 
-        .hero p {
-            font-family: 'Titan One', cursive;
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-        }
-
-        .btn-menu {
-            background: var(--red);
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            font-family: 'Titan One', cursive;
-            border-radius: 50px;
-            border: 3px solid var(--yellow);
-            transition: 0.3s;
-        }
-
-        .btn-menu:hover { transform: scale(1.1); background: var(--yellow); color: var(--red); }
-
-        /* --- CATEGORY NAV --- */
-        .category-nav {
-            position: sticky;
-            top: 0;
-            background: white;
-            z-index: 100;
-            display: flex;
-            justify-content: center;
-            padding: 15px;
-            gap: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .nav-link {
-            padding: 8px 15px;
-            background: var(--beige);
-            border-radius: 20px;
-            color: var(--red);
-            font-weight: 800;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        /* --- MENU GRID --- */
-        .menu-section {
-            padding: 60px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .section-title {
-            font-family: 'Titan One', cursive;
-            color: var(--red);
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .item-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: 0.3s;
-        }
-
-        .item-card:hover { transform: translateY(-10px); }
-
-        .item-img {
-            height: 200px;
-            background: #ddd;
+        /* --- ABOUT US (Amaleen Style) --- */
+        .about-section {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1528605248644-14dd04cb2201?q=80&w=2000');
+            background-size: cover;
+            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            color: #999;
+            padding: 0 10%;
         }
 
-        .item-info { padding: 20px; text-align: center; }
-
-        .item-info h3 {
-            margin: 0 0 10px;
-            font-family: 'Titan One', cursive;
-            color: var(--red);
+        .about-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            max-width: 800px;
+            text-align: center;
         }
 
-        .item-price {
-            font-weight: 800;
-            color: #555;
+        .about-box h2 {
+            font-family: 'Audiowide', cursive;
+            color: var(--brand-orange);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-box p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        /* --- MENU SECTION --- */
+        .menu-container {
+            background: white;
+            color: #1a1a1a;
+            padding: 100px 5%;
+        }
+
+        .menu-title {
+            font-family: 'Audiowide', cursive;
+            text-align: center;
+            font-size: 3rem;
+            color: var(--brand-blue);
+            margin-bottom: 60px;
+        }
+
+        .category-label {
+            display: block;
+            width: fit-content;
+            margin: 40px auto;
+            background: var(--brand-orange);
+            color: white;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .menu-item {
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .menu-item:hover {
+            border-bottom-color: var(--brand-blue);
+        }
+
+        .item-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .item-head h3 {
+            font-family: 'Audiowide', cursive;
             font-size: 1.2rem;
+            margin: 0;
+            color: #333;
+        }
+
+        .price {
+            font-weight: 700;
+            color: var(--brand-blue);
+        }
+
+        .desc {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 8px;
         }
 
         footer {
-            background: var(--red);
-            color: white;
-            padding: 40px;
+            padding: 50px;
             text-align: center;
-            font-family: 'Titan One', cursive;
+            background: var(--dark-bg);
+            color: #555;
         }
     </style>
 </head>
 <body>
 
+<header>
+    <img src="watermarked_img_7600413041573230752.png" alt="Cascada Logo" class="logo">
+</header>
+
 <section class="hero">
     <h1>CASCADA</h1>
-    <p>BOWLING CAFE & FUN</p>
-    <a href="#menu" class="btn-menu">VIEW MENU</a>
+    <p style="letter-spacing: 10px; font-weight: 700; color: var(--brand-orange);">CAFE & BOWLING</p>
 </section>
 
-<nav class="category-nav">
-    <a href="#always" class="nav-link">ALWAYS</a>
-    <a href="#summer" class="nav-link">SUMMER</a>
-    <a href="#toppings" class="nav-link">TOPPINGS</a>
-</nav>
+<section class="about-section">
+    <div class="about-box">
+        <h2>OUR STORY</h2>
+        <p>Located in the heart of Cascada Mall, we've blended the high-energy thrill of bowling with the relaxed atmosphere of a premium cafe. Whether you're chasing a strike or just stopping by for a treat, we provide the perfect backdrop for memories in the Bekaa.</p>
+    </div>
+</section>
 
-<div id="menu" class="menu-section">
-    <div id="always">
-        <h2 class="section-title">Always Available</h2>
-        <div class="grid">
-            <div class="item-card">
-                <div class="item-img">IMAGE OF POTATO</div>
-                <div class="item-info">
-                    <h3>BAKED POTATO</h3>
-                    <p>Butter & Cheese / Potato Salad</p>
-                    <div class="item-price">220,000 L.L.</div>
-                </div>
+<div class="menu-container">
+    <h2 class="menu-title">THE MENU</h2>
+
+    <span class="category-label">Normal Menu</span>
+    <div class="menu-grid">
+        <div class="menu-item">
+            <div class="item-head">
+                <h3>BAKED POTATO</h3>
+                <span class="price">220,000 LL</span>
             </div>
-            <div class="item-card">
-                <div class="item-img">IMAGE OF WAFFLE</div>
-                <div class="item-info">
-                    <h3>WAFFLE</h3>
-                    <p>Single or Double Mixed</p>
-                    <div class="item-price">Starting 150,000 L.L.</div>
-                </div>
+            <p class="desc">Served with butter, cheese, and fresh potato salad.</p>
+        </div>
+        <div class="menu-item">
+            <div class="item-head">
+                <h3>WAFFLE</h3>
+                <span class="price">150,000 LL</span>
             </div>
+            <p class="desc">Single or Double mixed with chocolate and seasonal fruits.</p>
+        </div>
+        <div class="menu-item">
+            <div class="item-head">
+                <h3>FROZEN YOGURT</h3>
+                <span class="price">200,000 LL</span>
+            </div>
+            <p class="desc">Light and refreshing with your choice of various fresh toppings.</p>
         </div>
     </div>
 
-    <div id="summer" style="margin-top: 80px;">
-        <h2 class="section-title">Summer Favorites</h2>
-        <div class="grid">
-            <div class="item-card">
-                <div class="item-img">IMAGE OF SLUSHIE</div>
-                <div class="item-info">
-                    <h3>SLUSHIES</h3>
-                    <p>Berry, Strawberry, Lemon</p>
-                    <div class="item-price">140,000 L.L.</div>
-                </div>
+    <span class="category-label">Seasonal Specials</span>
+    <div class="menu-grid">
+        <div class="menu-item">
+            <div class="item-head">
+                <h3>SUMMER SLUSHIE</h3>
+                <span class="price">140,000 LL</span>
             </div>
-            <div class="item-card">
-                <div class="item-img">IMAGE OF YOGURT</div>
-                <div class="item-info">
-                    <h3>FROZEN YOGURT</h3>
-                    <p>Choose your fresh toppings</p>
-                    <div class="item-price">200,000 L.L.</div>
-                </div>
-            </div>
+            <p class="desc">Cool down with Berry, Strawberry, or Lemon flavors.</p>
         </div>
     </div>
 </div>
 
 <footer>
-    CASCADA MALL - BEKAA <br>
-    RESERVATIONS: 03 025 090
+    <img src="watermarked_img_7600413041573230752.png" alt="Cascada Logo" class="logo" style="height: 40px; opacity: 0.5; margin-bottom: 20px;">
+    <p>CASCADA MALL - BEKAA, LEBANON</p>
+    <p>RESERVATIONS: 03 025 090</p>
 </footer>
 
 </body>
