@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cascada Bowling Cafe | Menu</title>
+    <style>
+        :root {
+            --primary-color: #e63946; /* Sporty Red */
+            --bg-color: #f8f9fa;
+            --text-color: #1d3557;
+            --accent-color: #457b9d;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            border-bottom: 5px solid var(--primary-color);
+        }
+
+        h1 { margin: 0; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        p.subtitle { margin: 5px 0 0; opacity: 0.8; font-style: italic; }
+
+        .container { max-width: 600px; margin: auto; padding: 1rem; }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin: 2rem 0 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .menu-item {
+            background: white;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item-info h3 { margin: 0; font-size: 1.1rem; }
+        .item-info p { margin: 5px 0 0; font-size: 0.9rem; color: #666; }
+        .price { font-weight: bold; color: var(--text-color); white-space: nowrap; margin-left: 10px; }
+
+        .seasonal-badge {
+            background: #ffb703;
+            color: #000;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.8rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>CASCADA BOWLING CAFE</h1>
+    <p class="subtitle">Eat. Bowl. Repeat.</p>
+</header>
+
+<div class="container">
+    
+    <div class="section-title">
+        <h2>Always Available</h2>
+    </div>
+
+    <div class="menu-item">
+        <div class="item-info">
+            <h3>Classic Fries</h3>
+            <p>Golden, crispy, and salted to perfection.</p>
+        </div>
+        <div class="price">L.L. 120,000</div>
+    </div>
+
+    <div class="menu-item">
+        <div class="item-info">
+            <h3>Cheese Fries</h3>
+            <p>Our classic fries topped with warm cheddar sauce.</p>
+        </div>
+        <div class="price">L.L. 180,000</div>
+    </div>
+
+    <div class="menu-item">
+        <div class="item-info">
+            <h3>Chicken Tenders</h3>
+            <p>4 pieces of breaded chicken with your choice of dip.</p>
+        </div>
+        <div class="price">L.L. 350,000</div>
+    </div>
+
+    <div class="menu-item">
+        <div class="item-info">
+            <h3>Nachos & Cheese</h3>
+            <p>Crunchy tortilla chips with a side of warm cheddar.</p>
+        </div>
+        <div class="price">L.L. 220,000</div>
+    </div>
+
+    <div class="menu-item">
+        <div class="item-info">
+            <h3>Loaded Baked Potato</h3>
+            <p>Choose toppings: Olives, Pickles, Mushrooms, or Jalapeños.</p>
+        </div>
+        <div class="price">L.L. 250,000</div>
+    </div>
+
+    <div class="menu-item">
+        <div class="item-info">
+            <h3>Sweet Waffle</h3>
+            <p>Freshly baked. Choice of Chocolate, White Choc, or Lotus.</p>
+        </div>
+        <div class="price">L.L. 300,000</div>
+    </div>
+
+    <div class="section-title">
+        <h2 style="color: var(--accent-color);">Summer Specials</h2>
+    </div>
+
+    <div class="menu-item">
+        <div class="item-info">
+            <span class="seasonal-badge">Summer Only</span>
+            <h3>Frozen Yogurt</h3>
+            <p>Refreshing treats with mixed berry or fruit toppings.</p>
+        </div>
+        <div class="price">L.L. 200,000</div>
+    </div>
+
+    <div class="menu-item">
+        <div class="item-info">
+            <span class="seasonal-badge">Summer Only</span>
+            <h3>Merry Cream</h3>
+            <p>Smooth soft-serve in a cone or cup.</p>
+        </div>
+        <div class="price">L.L. 100,000</div>
+    </div>
+
+    <div class="menu-item">
+        <div class="item-info">
+            <span class="seasonal-badge">Summer Only</span>
+            <h3>Fruit Slushies</h3>
+            <p>Blueberry, Lemon, or Cherry ice-blends.</p>
+        </div>
+        <div class="price">L.L. 120,000</div>
+    </div>
+
+</div>
+
+<footer>
+    <p>Cascada Mall - Cascada Bowling Level</p>
+    <p>Delivery & Inquiries: 03 025 090</p>
+</footer>
+
+</body>
+</html>
