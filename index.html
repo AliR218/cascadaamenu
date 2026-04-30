@@ -4,179 +4,231 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cascada Bowling Cafe Menu</title>
-    <!-- Bold retro font -->
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Using fonts that mimic the original bold/comic style -->
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Titan+One&family=Roboto:wght@900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --menu-beige: #f4ecd8;
-            --menu-red: #d90429;
-            --menu-orange: #f77f00;
-            --menu-white: #ffffff;
-            --text-dark: #2b2d42;
+            --munch-red: #d31124;
+            --munch-yellow: #f9b233;
+            --bg-beige: #f3e9d2;
         }
 
         body {
-            background-color: var(--menu-beige);
-            background-image: radial-gradient(#e5dcc3 1px, transparent 1px);
-            background-size: 20px 20px; /* Subtle retro pattern */
+            /* Mimicking the repeating 'M' background pattern from IMG_2755.jpg */
+            background-color: var(--bg-beige);
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); 
             font-family: 'Roboto', sans-serif;
-            color: var(--text-dark);
             margin: 0; padding: 0;
+            color: var(--munch-red);
         }
 
+        /* HEADER & LOGO STYLE (Mimics Munchies Font) */
         header {
-            background: var(--menu-red);
-            color: white;
             text-align: center;
-            padding: 30px 10px;
-            border-bottom: 8px solid var(--menu-orange);
+            padding: 40px 10px;
+            background: rgba(243, 233, 210, 0.9);
         }
 
-        h1 { font-family: 'Bungee', cursive; margin: 0; font-size: 2.2rem; line-height: 1; }
-        .tagline { font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-top: 5px; }
-
-        .container { max-width: 900px; margin: auto; padding: 20px; }
-
-        .category-header {
-            background: var(--menu-orange);
-            color: white;
-            font-family: 'Bungee', cursive;
-            padding: 10px 20px;
+        .logo-box {
             display: inline-block;
-            transform: skew(-10deg);
-            margin: 30px 0 20px 10px;
+            line-height: 0.8;
+        }
+
+        .logo-top {
+            font-family: 'Luckiest+Guy', cursive;
+            font-size: 4rem;
+            color: var(--munch-red);
+            text-shadow: 3px 3px 0px white, 6px 6px 0px rgba(0,0,0,0.1);
+            margin: 0;
+            letter-spacing: -2px;
+        }
+
+        .logo-bottom {
+            font-family: 'Titan One', cursive;
+            font-size: 1.8rem;
+            color: var(--munch-yellow);
+            display: block;
+            margin-top: -10px;
+            text-shadow: 2px 2px 0px var(--munch-red);
+        }
+
+        .fun-bar {
+            background: var(--munch-red);
+            color: white;
+            display: inline-block;
+            padding: 5px 20px;
+            font-weight: 900;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-transform: uppercase;
+        }
+
+        /* MENU CONTENT */
+        .container { max-width: 800px; margin: auto; padding: 15px; }
+
+        .section-banner {
+            background: var(--munch-red);
+            color: white;
+            font-family: 'Titan One', cursive;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 30px 0 20px;
+            transform: skew(-5deg); /* Slanted style from original photos */
+            box-shadow: 5px 5px 0px var(--munch-yellow);
         }
 
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
         }
 
-        /* Box style similar to IMG_2756.jpg */
-        .food-card {
-            background: var(--menu-white);
-            border: 3px solid var(--menu-red);
-            border-radius: 5px;
-            padding: 15px;
+        /* BOX STYLE mimicking IMG_2756.jpg */
+        .card {
+            background: white;
+            border: 4px solid var(--munch-red);
+            padding: 0;
             position: relative;
-            box-shadow: 5px 5px 0px var(--menu-orange);
-        }
-
-        .food-card h3 {
-            background: var(--menu-red);
-            color: white;
-            font-family: 'Bungee', cursive;
-            margin: -15px -15px 15px -15px;
-            padding: 10px;
-            font-size: 1.2rem;
             text-align: center;
         }
 
-        .price-tag {
-            color: var(--menu-red);
+        .card-title {
+            background: var(--munch-red);
+            color: white;
+            padding: 5px;
+            font-family: 'Titan One', cursive;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .price {
             font-weight: 900;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            color: var(--munch-red);
             display: block;
-            margin-top: 10px;
+            padding: 10px;
         }
 
-        .flavor-list {
-            font-size: 0.85rem;
-            color: #555;
-            border-top: 1px dashed #ccc;
-            margin-top: 10px;
-            padding-top: 5px;
-        }
-
-        .arrow-decor {
-            color: var(--menu-orange);
+        .arrow {
+            color: var(--munch-yellow);
+            background: var(--munch-red);
+            padding: 2px 6px;
             font-weight: bold;
-            margin-right: 5px;
+            display: inline-block;
+            margin: 5px;
+            border: 2px solid var(--munch-yellow);
+        }
+
+        /* TOPPINGS AREA */
+        .toppings-box {
+            background: white;
+            border: 2px dashed var(--munch-red);
+            margin-top: 20px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .topping-label {
+            color: white;
+            background: var(--munch-red);
+            padding: 2px 10px;
+            font-weight: 900;
+            display: inline-block;
+            margin: 10px 0;
         }
 
         footer {
+            background: white;
+            border-top: 5px solid var(--munch-red);
+            padding: 20px;
             text-align: center;
-            padding: 40px 20px;
-            background: var(--text-dark);
-            color: white;
+            font-weight: 900;
             margin-top: 50px;
         }
 
-        /* Slushie & Treats Styling */
-        .summer-card { border-color: #00afb9; box-shadow: 5px 5px 0px #0081a7; }
-        .summer-card h3 { background: #00afb9; }
-
+        @media (max-width: 600px) {
+            .menu-grid { grid-template-columns: 1fr; }
+            .logo-top { font-size: 3rem; }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>CASCADA BOWLING CAFE</h1>
-    <div class="tagline">Fun Food & More</div>
+    <div class="logo-box">
+        <span class="logo-top">Cascada</span>
+        <span class="logo-bottom">Bowling Cafe</span>
+    </div>
+    <br>
+    <div class="fun-bar">FUN FOOD AND MORE</div>
 </header>
 
 <div class="container">
-    
-    <div class="category-header">ALWAYS AVAILABLE</div>
+
+    <div class="section-banner">ALWAYS AVAILABLE</div>
     
     <div class="menu-grid">
-        <div class="food-card">
-            <h3>WAFFLES</h3>
-            <p><span class="arrow-decor">>></span>Chocolate, Mixed, or Double variants available.</p>
-            <div class="flavor-list">Toppings: Lotus, Hazelnut, White Chocolate, Strawberry</div>
-            <span class="price-tag">Starting 150,000 L.L.</span>
+        <div class="card">
+            <div class="card-title">BAKED POTATO</div>
+            <p><span class="arrow">>></span> Butter and Cheese</p>
+            <p><span class="arrow">>></span> Potato Salad</p>
+            <span class="price">220,000 L.L.</span>
         </div>
 
-        <div class="food-card">
-            <h3>BAKED POTATO</h3>
-            <p><span class="arrow-decor">>></span>Freshly baked potato with your choice of toppings.</p>
-            <div class="flavor-list">Toppings: Butter, Cheese, Olives, Pickles, Corn, Mushrooms</div>
-            <span class="price-tag">Starting 220,000 L.L.</span>
+        <div class="card">
+            <div class="card-title">WAFFLE</div>
+            <p><span class="arrow">>></span> Single Chocolate</p>
+            <p><span class="arrow">>></span> Double Mixed</p>
+            <span class="price">Starting 150,000 L.L.</span>
         </div>
 
-        <div class="food-card">
-            <h3>NACHOS</h3>
-            <p><span class="arrow-decor">>></span>Classic crunchy nachos served with warm melted cheddar cheese.</p>
-            <span class="price-tag">180,000 L.L.</span>
+        <div class="card">
+            <div class="card-title">NACHOS</div>
+            <p><span class="arrow">>></span> With Cheddar Cheese</p>
+            <span class="price">180,000 L.L.</span>
         </div>
 
-        <div class="food-card">
-            <h3>CLASSIC FRIES</h3>
-            <p><span class="arrow-decor">>></span>Golden crispy fries salted to perfection. Add cheese for extra!</p>
-            <span class="price-tag">120,000 L.L.</span>
+        <div class="card">
+            <div class="card-title">FRIES</div>
+            <p><span class="arrow">>></span> Classic or Cheesy</p>
+            <span class="price">120,000 L.L.</span>
         </div>
     </div>
 
-    <div class="category-header" style="background: #00afb9;">SUMMER FAVORITES</div>
+    <div class="section-banner">SUMMER FAVORITES</div>
 
     <div class="menu-grid">
-        <div class="food-card summer-card">
-            <h3>FROZEN YOGURT</h3>
-            <p><span class="arrow-decor">>></span>Available in Medium and Large cups with 3 toppings.</p>
-            <div class="flavor-list">Flavors: Mango, Strawberry, Passion Fruit, Mixed Berries</div>
-            <span class="price-tag">Starting 250,000 L.L.</span>
+        <div class="card">
+            <div class="card-title">FROZEN YOGURT</div>
+            <p><span class="arrow">>></span> Fruit & Berry Toppings</p>
+            <span class="price">200,000 L.L.</span>
         </div>
 
-        <div class="food-card summer-card">
-            <h3>MERRY CREAM</h3>
-            <p><span class="arrow-decor">>></span>Smooth soft-serve in a cone or cup.</p>
-            <span class="price-tag">Starting 100,000 L.L.</span>
+        <div class="card">
+            <div class="card-title">MERRY CREAM</div>
+            <p><span class="arrow">>></span> Cone or Cup</p>
+            <span class="price">100,000 L.L.</span>
         </div>
 
-        <div class="food-card summer-card">
-            <h3>SLUSHIES</h3>
-            <p><span class="arrow-decor">>></span>Ice-cold blended fruit refreshment.</p>
-            <div class="flavor-list"><strong>Available Flavors:</strong> Berry, Strawberry, Lemon</div>
-            <span class="price-tag">140,000 L.L.</span>
+        <div class="card" style="grid-column: span 1;">
+            <div class="card-title">SLUSHIES</div>
+            <p><span class="arrow">>></span> Berry, Strawberry, Lemon</p>
+            <span class="price">140,000 L.L.</span>
         </div>
+    </div>
+
+    <div class="toppings-box">
+        <div class="topping-label">TOPPINGS & FLAVORS</div>
+        <p>Hazelnut • Caramel • Lotus • Dark Choc • White Choc • Strawberry • Mango • Passion Fruit • Mixed Berries • Corn • Olives • Pickles • Jalapeño • Mushroom</p>
+        <p><strong>ADDITIONAL TOPPING: 50,000 L.L.</strong></p>
     </div>
 
 </div>
 
 <footer>
-    <p>CASCADA MALL - BEKAA, LEBANON</p>
-    <p>BOWLING LEVEL | 03 025 090</p>
+    CASCADA MALL - BEKAA <br>
+    TEL: 03 025 090
 </footer>
 
 </body>
